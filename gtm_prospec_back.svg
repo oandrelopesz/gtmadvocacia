@@ -36,38 +36,41 @@
 
   <!-- divisórias verticais entre as colunas — com pontinho central -->
   <g stroke="#1F3A35" stroke-opacity="0.18" stroke-width="0.8" stroke-linecap="round">
-    <line x1="340" y1="188" x2="340" y2="289"/>
-    <line x1="340" y1="299" x2="340" y2="400"/>
-    <line x1="620" y1="188" x2="620" y2="289"/>
-    <line x1="620" y1="299" x2="620" y2="400"/>
+    <line x1="340" y1="188" x2="340" y2="280"/>
+    <line x1="340" y1="290" x2="340" y2="382"/>
+    <line x1="620" y1="188" x2="620" y2="280"/>
+    <line x1="620" y1="290" x2="620" y2="382"/>
   </g>
-  <circle cx="340" cy="294" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
-  <circle cx="620" cy="294" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
+  <circle cx="340" cy="285" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
+  <circle cx="620" cy="285" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
 
   
     <!-- João Giovanini -->
-    <text x="200" y="198" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">João Giovanini</text>
-    <text x="200" y="220" text-anchor="middle" class="interi" font-size="12" fill="#5A8578" letter-spacing="0.02em">Direito Trabalhista</text>
-    <text x="200" y="252" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">(61) 99945-4564</text>
-    <image href="assets/qr_joao.png" x="146" y="270" width="108" height="108"/>
-    <text x="200" y="392" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
+    <text x="200" y="200" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">João Giovanini</text>
+    <text x="200" y="232" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">(61) 99945-4564</text>
+    <image href="assets/qr_joao.png" x="146" y="252" width="108" height="108"/>
+    <text x="200" y="374" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
   
 
     <!-- Giovanna Trombini -->
-    <text x="480" y="198" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Giovanna Trombini</text>
-    <text x="480" y="220" text-anchor="middle" class="interi" font-size="12" fill="#5A8578" letter-spacing="0.02em">Direito Digital</text>
-    <text x="480" y="252" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">(61) 99695-8863</text>
-    <image href="assets/qr_giovanna.png" x="426" y="270" width="108" height="108"/>
-    <text x="480" y="392" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
+    <text x="480" y="200" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Giovanna Trombini</text>
+    <text x="480" y="232" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">(61) 99695-8863</text>
+    <image href="assets/qr_giovanna.png" x="426" y="252" width="108" height="108"/>
+    <text x="480" y="374" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
   
 
     <!-- Rafael Mansur -->
-    <text x="760" y="198" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Rafael Mansur</text>
-    <text x="760" y="220" text-anchor="middle" class="interi" font-size="12" fill="#5A8578" letter-spacing="0.02em">Direito do Servidor Público</text>
-    <text x="760" y="252" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">(61) 99269-7534</text>
-    <image href="assets/qr_rafael.png" x="706" y="270" width="108" height="108"/>
-    <text x="760" y="392" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
+    <text x="760" y="200" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Rafael Mansur</text>
+    <text x="760" y="232" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">(61) 99269-7534</text>
+    <image href="assets/qr_rafael.png" x="706" y="252" width="108" height="108"/>
+    <text x="760" y="374" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
   
+
+  <!-- faixa de áreas atendidas — sem nichoizar por sócio -->
+  <text x="480" y="420" text-anchor="middle" class="inter"
+        font-size="10.5" fill="#5A8578" letter-spacing="0.08em">
+    Trabalhista  ·  Digital  ·  Servidor Público  ·  Cível  ·  Penal  ·  Administrativo
+  </text>
 
   <!-- separador horizontal acima do rodapé -->
   <g stroke="#1F3A35" stroke-opacity="0.18" stroke-width="0.6" stroke-linecap="round">

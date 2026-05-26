@@ -118,9 +118,16 @@ function buildFront(logoHref) {
 // Sem áreas — o escritório atua em múltiplas frentes, então não nichamos.
 // =========================================================================
 const PEOPLE = [
-  { cx: 200, name: 'João Giovanini',    area: 'Direito Trabalhista',         phone: '(61) 99945-4564', qr: 'qr_joao.png'     },
-  { cx: 480, name: 'Giovanna Trombini', area: 'Direito Digital',             phone: '(61) 99695-8863', qr: 'qr_giovanna.png' },
-  { cx: 760, name: 'Rafael Mansur',     area: 'Direito do Servidor Público', phone: '(61) 99269-7534', qr: 'qr_rafael.png'   },
+  { cx: 200, name: 'João Giovanini',    phone: '(61) 99945-4564', qr: 'qr_joao.png'     },
+  { cx: 480, name: 'Giovanna Trombini', phone: '(61) 99695-8863', qr: 'qr_giovanna.png' },
+  { cx: 760, name: 'Rafael Mansur',     phone: '(61) 99269-7534', qr: 'qr_rafael.png'   },
+];
+
+// Áreas atendidas pelo escritório — faixa única (não atribuída a sócio).
+// Editar aqui para incluir/excluir áreas.
+const PRACTICE_AREAS = [
+  'Trabalhista', 'Digital', 'Servidor Público',
+  'Cível', 'Penal', 'Administrativo',
 ];
 
 function buildBack(logoHrefDark, qrHrefMap) {
@@ -136,18 +143,21 @@ function buildBack(logoHrefDark, qrHrefMap) {
   // Headline em itálico Playfair
   const headlineY = 158;
 
-  // Bloco das 3 colunas — agora com linha de área entre nome e telefone
-  const yName  = 198;
-  const yArea  = 220;   // área de atuação principal, itálico Inter 12px
-  const yPhone = 252;
-  const qrTop  = 270;
+  // Bloco das 3 colunas — sem linha de área por sócio (áreas vão numa faixa única abaixo)
+  const yName  = 200;
+  const yPhone = 232;
+  const qrTop  = 252;
   const qrSize = 108;
-  const yLabel = qrTop + qrSize + 14; // 392
+  const yLabel = qrTop + qrSize + 14; // 374
 
   // Divisórias entre colunas (mais sutis, com pontinho central)
   const divX1 = 340, divX2 = 620;
-  const divY1 = 188, divY2 = 400;
+  const divY1 = 188, divY2 = 382;
   const divCY = (divY1 + divY2) / 2;
+
+  // Faixa de áreas (entre as colunas e o rodapé)
+  const areasY = 420;
+  const areasText = PRACTICE_AREAS.join('  ·  ');
 
   // Rodapé com contatos do escritório
   const footY1 = 460;
@@ -156,7 +166,6 @@ function buildBack(logoHrefDark, qrHrefMap) {
   const personSvg = (p) => `
     <!-- ${p.name} -->
     <text x="${p.cx}" y="${yName}" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">${p.name}</text>
-    <text x="${p.cx}" y="${yArea}" text-anchor="middle" class="interi" font-size="12" fill="#5A8578" letter-spacing="0.02em">${p.area}</text>
     <text x="${p.cx}" y="${yPhone}" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">${p.phone}</text>
     <image href="${qrHrefMap[p.qr]}" x="${p.cx - qrSize/2}" y="${qrTop}" width="${qrSize}" height="${qrSize}"/>
     <text x="${p.cx}" y="${yLabel}" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
@@ -203,6 +212,12 @@ function buildBack(logoHrefDark, qrHrefMap) {
   <circle cx="${divX2}" cy="${divCY}" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
 
   ${PEOPLE.map(personSvg).join('\n')}
+
+  <!-- faixa de áreas atendidas — sem nichoizar por sócio -->
+  <text x="480" y="${areasY}" text-anchor="middle" class="inter"
+        font-size="10.5" fill="#5A8578" letter-spacing="0.08em">
+    ${areasText}
+  </text>
 
   <!-- separador horizontal acima do rodapé -->
   <g stroke="#1F3A35" stroke-opacity="0.18" stroke-width="0.6" stroke-linecap="round">
