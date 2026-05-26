@@ -40,6 +40,12 @@
     Só esqueceram de avisar os advogados.
   </text>
 
+  <!-- @ Instagram (canto inferior esquerdo) -->
+  <text x="60" y="508" text-anchor="start" class="inter"
+        font-size="10" fill="#8FC9B8" fill-opacity="0.78" letter-spacing="0.16em" font-weight="500">
+    @gtm.advocacia
+  </text>
+
   <!-- indicador "vire" — refinado com linha curta de acompanhamento -->
   <g>
     <line x1="800" y1="505" x2="860" y2="505" stroke="#8FC9B8" stroke-opacity="0.45" stroke-width="0.6"/>
