@@ -42,47 +42,67 @@ const STYLE = `<![CDATA[
 ]]>`;
 
 // =========================================================================
-// FRENTE  — logo dominante centralizado + manifesto compacto abaixo
+// FRENTE  — logo dominante + decoração + manifesto compacto
 // =========================================================================
 function buildFront(logoHref) {
-  // Logo bem maior e centralizado — usa a altura útil entre y=60 e y=300
-  const lh = 240;                                  // altura do logo no viewBox
-  const lw = +(lh * aspect).toFixed(2);            // largura derivada
+  // Logo grande, deslocado um pouco para cima pra abrir espaço pra ornamento
+  const lh = 230;
+  const lw = +(lh * aspect).toFixed(2);
   const lx = (960 - lw) / 2;
-  const ly = 50;
+  const ly = 55;
 
-  // Manifesto, fonte menor, duas linhas centralizadas abaixo do logo
-  const HEAD = 30;
-  const line1Y = 380;
-  const line2Y = line1Y + HEAD * 1.25;             // line-height generoso
+  // Ornamento decorativo (linha fina + pontilhado) logo abaixo do logo
+  const ornY = 320;
+
+  // Manifesto em duas linhas — sem encostar nas margens, com line-height generoso
+  const HEAD = 28;
+  const line1Y = 385;
+  const line2Y = line1Y + HEAD * 1.3;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560">
   <defs>
     <style>${STYLE}</style>
+    <radialGradient id="bgFront" cx="50%" cy="42%" r="80%">
+      <stop offset="0%" stop-color="#26443D"/>
+      <stop offset="60%" stop-color="#1F3A35"/>
+      <stop offset="100%" stop-color="#162923"/>
+    </radialGradient>
   </defs>
 
-  <!-- fundo com sangria -->
-  <rect x="0" y="0" width="960" height="560" fill="#1F3A35"/>
+  <!-- fundo com sangria — gradiente radial sutil pra dar profundidade -->
+  <rect x="0" y="0" width="960" height="560" fill="url(#bgFront)"/>
 
   <!-- logo (claro) dominante, centralizado -->
   <image href="${logoHref}" x="${lx}" y="${ly}" width="${lw}" height="${lh}" preserveAspectRatio="xMidYMin meet"/>
 
-  <!-- MANIFESTO (menor, abaixo do logo) -->
+  <!-- ornamento: linhas finas com pontilhado central -->
+  <g fill="none" stroke="#8FC9B8" stroke-opacity="0.55" stroke-linecap="round">
+    <line x1="350" y1="${ornY}" x2="430" y2="${ornY}" stroke-width="0.6"/>
+    <circle cx="450" cy="${ornY}" r="1.4" fill="#8FC9B8" fill-opacity="0.7" stroke="none"/>
+    <circle cx="480" cy="${ornY}" r="1.4" fill="#8FC9B8" fill-opacity="0.7" stroke="none"/>
+    <circle cx="510" cy="${ornY}" r="1.4" fill="#8FC9B8" fill-opacity="0.7" stroke="none"/>
+    <line x1="530" y1="${ornY}" x2="610" y2="${ornY}" stroke-width="0.6"/>
+  </g>
+
+  <!-- MANIFESTO -->
   <text x="480" y="${line1Y}" text-anchor="middle" class="pf"
-        font-size="${HEAD}" fill="#F5F1E8" letter-spacing="0.005em">
+        font-size="${HEAD}" fill="#F5F1E8" letter-spacing="0.01em">
     A advocacia <tspan class="pfi" fill="#8FC9B8">mudou.</tspan>
   </text>
   <text x="480" y="${line2Y}" text-anchor="middle" class="pf"
-        font-size="${HEAD}" fill="#F5F1E8" letter-spacing="0.005em">
+        font-size="${HEAD}" fill="#F5F1E8" letter-spacing="0.01em">
     Só esqueceram de avisar os advogados.
   </text>
 
-  <!-- indicador "vire" canto inferior direito -->
-  <text x="900" y="500" text-anchor="end" class="inter"
-        font-size="11" fill="#8FC9B8" opacity="0.6" letter-spacing="0.2em">
-    vire →
-  </text>
+  <!-- indicador "vire" — refinado com linha curta de acompanhamento -->
+  <g>
+    <line x1="800" y1="505" x2="860" y2="505" stroke="#8FC9B8" stroke-opacity="0.45" stroke-width="0.6"/>
+    <text x="900" y="508" text-anchor="end" class="inter"
+          font-size="10" fill="#8FC9B8" fill-opacity="0.75" letter-spacing="0.32em" font-weight="500">
+      VIRE
+    </text>
+  </g>
 </svg>
 `;
 }
@@ -98,67 +118,94 @@ const PEOPLE = [
 ];
 
 function buildBack(logoHrefDark, qrHrefMap) {
-  // Logo (escuro) compacto no topo, centralizado
-  const lh = 56;
+  // Logo (escuro) no topo, centralizado
+  const lh = 54;
   const lw = +(lh * aspect).toFixed(2);
   const lx = (960 - lw) / 2;
-  const ly = 38;
+  const ly = 36;
 
-  // Headline sem nicho de área
-  const headlineY = 140;
+  // Ornamento ecoando o da frente — pontilhado em mint escuro
+  const ornY = 122;
 
-  // Bloco das 3 colunas — y = 175 .. 415
-  const yName  = 200;
-  const yPhone = 232;
-  const qrTop  = 252;
+  // Headline em itálico Playfair
+  const headlineY = 165;
+
+  // Bloco das 3 colunas
+  const yName  = 220;
+  const yPhone = 252;
+  const qrTop  = 272;
   const qrSize = 110;
-  const yLabel = qrTop + qrSize + 12; // 374
+  const yLabel = qrTop + qrSize + 14; // 396
 
-  // Divisórias entre colunas — não cruzam a área da headline nem o rodapé
+  // Divisórias entre colunas (mais sutis, com pontinho central)
   const divX1 = 340, divX2 = 620;
-  const divY1 = 180, divY2 = 405;
+  const divY1 = 200, divY2 = 405;
+  const divCY = (divY1 + divY2) / 2;
 
   // Rodapé com contatos do escritório
-  const footY1 = 470;  // separador
-  const footYText = 495;
+  const footY1 = 460;
+  const footYText = 490;
 
   const personSvg = (p) => `
     <!-- ${p.name} -->
     <text x="${p.cx}" y="${yName}" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">${p.name}</text>
-    <text x="${p.cx}" y="${yPhone}" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500">${p.phone}</text>
+    <text x="${p.cx}" y="${yPhone}" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">${p.phone}</text>
     <image href="${qrHrefMap[p.qr]}" x="${p.cx - qrSize/2}" y="${qrTop}" width="${qrSize}" height="${qrSize}"/>
-    <text x="${p.cx}" y="${yLabel}" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.3em">whatsapp</text>
+    <text x="${p.cx}" y="${yLabel}" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
   `;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560">
   <defs>
     <style>${STYLE}</style>
+    <radialGradient id="bgBack" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#F4EFE4"/>
+      <stop offset="100%" stop-color="#ECE6D8"/>
+    </radialGradient>
   </defs>
 
-  <!-- fundo com sangria -->
-  <rect x="0" y="0" width="960" height="560" fill="#F1ECE0"/>
+  <!-- fundo com sangria — variação muito sutil de bege -->
+  <rect x="0" y="0" width="960" height="560" fill="url(#bgBack)"/>
 
   <!-- logo (escuro) no topo, centralizado -->
   <image href="${logoHrefDark}" x="${lx}" y="${ly}" width="${lw}" height="${lh}" preserveAspectRatio="xMidYMin meet"/>
 
-  <!-- HEADLINE (sem nicho de área) -->
-  <text x="480" y="${headlineY}" text-anchor="middle" class="pf" font-size="24" fill="#1F3A35">
+  <!-- ornamento decorativo (ecoa o da frente) -->
+  <g stroke="#5A8578" stroke-opacity="0.55" stroke-linecap="round">
+    <line x1="370" y1="${ornY}" x2="440" y2="${ornY}" stroke-width="0.6"/>
+    <circle cx="455" cy="${ornY}" r="1.4" fill="#5A8578" fill-opacity="0.75" stroke="none"/>
+    <circle cx="480" cy="${ornY}" r="1.4" fill="#5A8578" fill-opacity="0.75" stroke="none"/>
+    <circle cx="505" cy="${ornY}" r="1.4" fill="#5A8578" fill-opacity="0.75" stroke="none"/>
+    <line x1="520" y1="${ornY}" x2="590" y2="${ornY}" stroke-width="0.6"/>
+  </g>
+
+  <!-- HEADLINE — itálico Playfair, ar boutique -->
+  <text x="480" y="${headlineY}" text-anchor="middle" class="pfi" font-size="24" fill="#1F3A35" letter-spacing="0.01em">
     Fale direto com um sócio.
   </text>
 
-  <!-- divisórias verticais entre as colunas -->
-  <line x1="${divX1}" y1="${divY1}" x2="${divX1}" y2="${divY2}" stroke="#1F3A35" stroke-opacity="0.2" stroke-width="1"/>
-  <line x1="${divX2}" y1="${divY1}" x2="${divX2}" y2="${divY2}" stroke="#1F3A35" stroke-opacity="0.2" stroke-width="1"/>
+  <!-- divisórias verticais entre as colunas — com pontinho central -->
+  <g stroke="#1F3A35" stroke-opacity="0.18" stroke-width="0.8" stroke-linecap="round">
+    <line x1="${divX1}" y1="${divY1}" x2="${divX1}" y2="${divCY - 5}"/>
+    <line x1="${divX1}" y1="${divCY + 5}" x2="${divX1}" y2="${divY2}"/>
+    <line x1="${divX2}" y1="${divY1}" x2="${divX2}" y2="${divCY - 5}"/>
+    <line x1="${divX2}" y1="${divCY + 5}" x2="${divX2}" y2="${divY2}"/>
+  </g>
+  <circle cx="${divX1}" cy="${divCY}" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
+  <circle cx="${divX2}" cy="${divCY}" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
 
   ${PEOPLE.map(personSvg).join('\n')}
 
   <!-- separador horizontal acima do rodapé -->
-  <line x1="120" y1="${footY1}" x2="840" y2="${footY1}" stroke="#1F3A35" stroke-opacity="0.18" stroke-width="1"/>
+  <g stroke="#1F3A35" stroke-opacity="0.18" stroke-width="0.6" stroke-linecap="round">
+    <line x1="120" y1="${footY1}" x2="460" y2="${footY1}"/>
+    <line x1="500" y1="${footY1}" x2="840" y2="${footY1}"/>
+  </g>
+  <circle cx="480" cy="${footY1}" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
 
   <!-- rodapé: contato do escritório -->
-  <text x="480" y="${footYText}" text-anchor="middle" class="inter" font-size="12" fill="#1F3A35" letter-spacing="0.12em">
-    ${FIRM.instagram}<tspan dx="14" fill="#5A8578">·</tspan><tspan dx="14">${FIRM.email}</tspan>
+  <text x="480" y="${footYText}" text-anchor="middle" class="inter" font-size="11" fill="#1F3A35" letter-spacing="0.16em">
+    ${FIRM.instagram}<tspan dx="18" fill="#5A8578">·</tspan><tspan dx="18">${FIRM.email}</tspan>
   </text>
 </svg>
 `;
