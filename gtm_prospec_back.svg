@@ -30,40 +30,43 @@
   </g>
 
   <!-- HEADLINE — itálico Playfair, ar boutique -->
-  <text x="480" y="165" text-anchor="middle" class="pfi" font-size="24" fill="#1F3A35" letter-spacing="0.01em">
+  <text x="480" y="158" text-anchor="middle" class="pfi" font-size="24" fill="#1F3A35" letter-spacing="0.01em">
     Fale direto com um sócio.
   </text>
 
   <!-- divisórias verticais entre as colunas — com pontinho central -->
   <g stroke="#1F3A35" stroke-opacity="0.18" stroke-width="0.8" stroke-linecap="round">
-    <line x1="340" y1="200" x2="340" y2="297.5"/>
-    <line x1="340" y1="307.5" x2="340" y2="405"/>
-    <line x1="620" y1="200" x2="620" y2="297.5"/>
-    <line x1="620" y1="307.5" x2="620" y2="405"/>
+    <line x1="340" y1="188" x2="340" y2="289"/>
+    <line x1="340" y1="299" x2="340" y2="400"/>
+    <line x1="620" y1="188" x2="620" y2="289"/>
+    <line x1="620" y1="299" x2="620" y2="400"/>
   </g>
-  <circle cx="340" cy="302.5" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
-  <circle cx="620" cy="302.5" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
+  <circle cx="340" cy="294" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
+  <circle cx="620" cy="294" r="1.6" fill="#1F3A35" fill-opacity="0.35"/>
 
   
     <!-- João Giovanini -->
-    <text x="200" y="220" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">João Giovanini</text>
+    <text x="200" y="198" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">João Giovanini</text>
+    <text x="200" y="220" text-anchor="middle" class="interi" font-size="12" fill="#5A8578" letter-spacing="0.02em">Direito Trabalhista</text>
     <text x="200" y="252" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">(61) 99945-4564</text>
-    <image href="assets/qr_joao.png" x="145" y="272" width="110" height="110"/>
-    <text x="200" y="396" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
+    <image href="assets/qr_joao.png" x="146" y="270" width="108" height="108"/>
+    <text x="200" y="392" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
   
 
     <!-- Giovanna Trombini -->
-    <text x="480" y="220" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Giovanna Trombini</text>
+    <text x="480" y="198" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Giovanna Trombini</text>
+    <text x="480" y="220" text-anchor="middle" class="interi" font-size="12" fill="#5A8578" letter-spacing="0.02em">Direito Digital</text>
     <text x="480" y="252" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">(61) 99695-8863</text>
-    <image href="assets/qr_giovanna.png" x="425" y="272" width="110" height="110"/>
-    <text x="480" y="396" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
+    <image href="assets/qr_giovanna.png" x="426" y="270" width="108" height="108"/>
+    <text x="480" y="392" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
   
 
     <!-- Rafael Mansur -->
-    <text x="760" y="220" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Rafael Mansur</text>
+    <text x="760" y="198" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Rafael Mansur</text>
+    <text x="760" y="220" text-anchor="middle" class="interi" font-size="12" fill="#5A8578" letter-spacing="0.02em">Direito do Servidor Público</text>
     <text x="760" y="252" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">(61) 99269-7534</text>
-    <image href="assets/qr_rafael.png" x="705" y="272" width="110" height="110"/>
-    <text x="760" y="396" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
+    <image href="assets/qr_rafael.png" x="706" y="270" width="108" height="108"/>
+    <text x="760" y="392" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
   
 
   <!-- separador horizontal acima do rodapé -->

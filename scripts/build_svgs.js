@@ -112,9 +112,9 @@ function buildFront(logoHref) {
 // Sem áreas — o escritório atua em múltiplas frentes, então não nichamos.
 // =========================================================================
 const PEOPLE = [
-  { cx: 200, name: 'João Giovanini',    phone: '(61) 99945-4564', qr: 'qr_joao.png'     },
-  { cx: 480, name: 'Giovanna Trombini', phone: '(61) 99695-8863', qr: 'qr_giovanna.png' },
-  { cx: 760, name: 'Rafael Mansur',     phone: '(61) 99269-7534', qr: 'qr_rafael.png'   },
+  { cx: 200, name: 'João Giovanini',    area: 'Direito Trabalhista',         phone: '(61) 99945-4564', qr: 'qr_joao.png'     },
+  { cx: 480, name: 'Giovanna Trombini', area: 'Direito Digital',             phone: '(61) 99695-8863', qr: 'qr_giovanna.png' },
+  { cx: 760, name: 'Rafael Mansur',     area: 'Direito do Servidor Público', phone: '(61) 99269-7534', qr: 'qr_rafael.png'   },
 ];
 
 function buildBack(logoHrefDark, qrHrefMap) {
@@ -128,18 +128,19 @@ function buildBack(logoHrefDark, qrHrefMap) {
   const ornY = 122;
 
   // Headline em itálico Playfair
-  const headlineY = 165;
+  const headlineY = 158;
 
-  // Bloco das 3 colunas
-  const yName  = 220;
+  // Bloco das 3 colunas — agora com linha de área entre nome e telefone
+  const yName  = 198;
+  const yArea  = 220;   // área de atuação principal, itálico Inter 12px
   const yPhone = 252;
-  const qrTop  = 272;
-  const qrSize = 110;
-  const yLabel = qrTop + qrSize + 14; // 396
+  const qrTop  = 270;
+  const qrSize = 108;
+  const yLabel = qrTop + qrSize + 14; // 392
 
   // Divisórias entre colunas (mais sutis, com pontinho central)
   const divX1 = 340, divX2 = 620;
-  const divY1 = 200, divY2 = 405;
+  const divY1 = 188, divY2 = 400;
   const divCY = (divY1 + divY2) / 2;
 
   // Rodapé com contatos do escritório
@@ -149,6 +150,7 @@ function buildBack(logoHrefDark, qrHrefMap) {
   const personSvg = (p) => `
     <!-- ${p.name} -->
     <text x="${p.cx}" y="${yName}" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">${p.name}</text>
+    <text x="${p.cx}" y="${yArea}" text-anchor="middle" class="interi" font-size="12" fill="#5A8578" letter-spacing="0.02em">${p.area}</text>
     <text x="${p.cx}" y="${yPhone}" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500" letter-spacing="0.03em">${p.phone}</text>
     <image href="${qrHrefMap[p.qr]}" x="${p.cx - qrSize/2}" y="${qrTop}" width="${qrSize}" height="${qrSize}"/>
     <text x="${p.cx}" y="${yLabel}" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.4em" font-weight="500">WHATSAPP</text>
