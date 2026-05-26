@@ -41,13 +41,26 @@ A maioria das gráficas de qualidade aceita PDFs RGB e faz a conversão com o pe
 
 ## Os 3 sócios (verso)
 
-| Sócio | Área | WhatsApp |
-|---|---|---|
-| João Giovanini | Direito Trabalhista | (61) 99945-4564 |
-| Giovanna Trombini | Direito Digital | (61) 99695-8863 |
-| Rafael Mansur | Direito do Servidor Público | (61) 99269-7534 |
+| Sócio | WhatsApp |
+|---|---|
+| João Giovanini | (61) 99945-4564 |
+| Giovanna Trombini | (61) 99695-8863 |
+| Rafael Mansur | (61) 99269-7534 |
 
 Os QR Codes do verso já estão pré-preenchidos com mensagem contextual de WhatsApp para cada sócio.
+
+**Por que não listamos áreas de atuação:** o escritório atua em múltiplas frentes (cível, penal, administrativo, trabalhista, digital, servidor público etc.) — listar uma área por sócio nicharia a percepção e seria impreciso. A frase do verso (“Fale direto com um sócio”) reforça o atendimento direto sem amarrar a área.
+
+## Contato do escritório (rodapé do verso)
+
+Os valores atuais são placeholders. Para trocar, edite o bloco `FIRM` no topo de [`scripts/build_svgs.js`](scripts/build_svgs.js) e rode o pipeline de novo:
+
+```js
+const FIRM = {
+  instagram: '@gtm.advocacia',
+  email:     'contato@gtmadvocacia.com.br',
+};
+```
 
 ## Regerar os arquivos
 

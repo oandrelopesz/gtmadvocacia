@@ -2,51 +2,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560">
   <defs>
     <style><![CDATA[
-      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
-      .pf  { font-family: 'Playfair Display', 'Cormorant Garamond', 'Times New Roman', serif; font-weight: 400; }
-      .pfi { font-family: 'Playfair Display', 'Cormorant Garamond', 'Times New Roman', serif; font-weight: 400; font-style: italic; }
-      .inter { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-weight: 400; }
-      .interi { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-weight: 400; font-style: italic; }
-    ]]></style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+  .pf  { font-family: 'Playfair Display', 'Cormorant Garamond', 'Times New Roman', serif; font-weight: 400; }
+  .pfi { font-family: 'Playfair Display', 'Cormorant Garamond', 'Times New Roman', serif; font-weight: 400; font-style: italic; }
+  .inter { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-weight: 400; }
+  .interi { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; font-weight: 400; font-style: italic; }
+]]></style>
   </defs>
 
-  <!-- background with bleed -->
+  <!-- fundo com sangria -->
   <rect x="0" y="0" width="960" height="560" fill="#F1ECE0"/>
 
-  <!-- logo (dark) centered top -->
-  <image href="assets/gtm_logo_dark.png" x="462.165" y="70" width="35.67" height="50" preserveAspectRatio="xMidYMin meet"/>
+  <!-- logo (escuro) no topo, centralizado -->
+  <image href="assets/gtm_logo_dark.png" x="460.025" y="38" width="39.95" height="56" preserveAspectRatio="xMidYMin meet"/>
 
-  <!-- HEADLINE -->
-  <text x="480" y="160" text-anchor="middle" class="pf" font-size="26" fill="#1F3A35">
-    Fale direto com o sócio especialista no seu caso.
+  <!-- HEADLINE (sem nicho de área) -->
+  <text x="480" y="140" text-anchor="middle" class="pf" font-size="24" fill="#1F3A35">
+    Fale direto com um sócio.
   </text>
 
-  <!-- divider lines -->
-  <line x1="340" y1="240" x2="340" y2="480" stroke="#1F3A35" stroke-opacity="0.2" stroke-width="1"/>
-  <line x1="620" y1="240" x2="620" y2="480" stroke="#1F3A35" stroke-opacity="0.2" stroke-width="1"/>
+  <!-- divisórias verticais entre as colunas -->
+  <line x1="340" y1="180" x2="340" y2="405" stroke="#1F3A35" stroke-opacity="0.2" stroke-width="1"/>
+  <line x1="620" y1="180" x2="620" y2="405" stroke="#1F3A35" stroke-opacity="0.2" stroke-width="1"/>
 
   
     <!-- João Giovanini -->
-    <text x="200" y="260" text-anchor="middle" class="pf" font-size="20" fill="#1F3A35" letter-spacing="0.02em">João Giovanini</text>
-    <text x="200" y="282" text-anchor="middle" class="interi" font-size="12" fill="#5A8578">Direito Trabalhista</text>
-    <text x="200" y="312" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500">(61) 99945-4564</text>
-    <image href="assets/qr_joao.png" x="145" y="326" width="110" height="110"/>
-    <text x="200" y="451" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.3em">whatsapp</text>
+    <text x="200" y="200" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">João Giovanini</text>
+    <text x="200" y="232" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500">(61) 99945-4564</text>
+    <image href="assets/qr_joao.png" x="145" y="252" width="110" height="110"/>
+    <text x="200" y="374" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.3em">whatsapp</text>
   
 
     <!-- Giovanna Trombini -->
-    <text x="480" y="260" text-anchor="middle" class="pf" font-size="20" fill="#1F3A35" letter-spacing="0.02em">Giovanna Trombini</text>
-    <text x="480" y="282" text-anchor="middle" class="interi" font-size="12" fill="#5A8578">Direito Digital</text>
-    <text x="480" y="312" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500">(61) 99695-8863</text>
-    <image href="assets/qr_giovanna.png" x="425" y="326" width="110" height="110"/>
-    <text x="480" y="451" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.3em">whatsapp</text>
+    <text x="480" y="200" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Giovanna Trombini</text>
+    <text x="480" y="232" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500">(61) 99695-8863</text>
+    <image href="assets/qr_giovanna.png" x="425" y="252" width="110" height="110"/>
+    <text x="480" y="374" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.3em">whatsapp</text>
   
 
     <!-- Rafael Mansur -->
-    <text x="760" y="260" text-anchor="middle" class="pf" font-size="20" fill="#1F3A35" letter-spacing="0.02em">Rafael Mansur</text>
-    <text x="760" y="282" text-anchor="middle" class="interi" font-size="12" fill="#5A8578">Direito do Servidor Público</text>
-    <text x="760" y="312" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500">(61) 99269-7534</text>
-    <image href="assets/qr_rafael.png" x="705" y="326" width="110" height="110"/>
-    <text x="760" y="451" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.3em">whatsapp</text>
+    <text x="760" y="200" text-anchor="middle" class="pf" font-size="22" fill="#1F3A35" letter-spacing="0.02em">Rafael Mansur</text>
+    <text x="760" y="232" text-anchor="middle" class="inter" font-size="14" fill="#1F3A35" font-weight="500">(61) 99269-7534</text>
+    <image href="assets/qr_rafael.png" x="705" y="252" width="110" height="110"/>
+    <text x="760" y="374" text-anchor="middle" class="inter" font-size="9" fill="#5A8578" letter-spacing="0.3em">whatsapp</text>
   
+
+  <!-- separador horizontal acima do rodapé -->
+  <line x1="120" y1="470" x2="840" y2="470" stroke="#1F3A35" stroke-opacity="0.18" stroke-width="1"/>
+
+  <!-- rodapé: contato do escritório -->
+  <text x="480" y="495" text-anchor="middle" class="inter" font-size="12" fill="#1F3A35" letter-spacing="0.12em">
+    @gtm.advocacia<tspan dx="14" fill="#5A8578">·</tspan><tspan dx="14">contato@gtmadvocacia.com.br</tspan>
+  </text>
 </svg>
